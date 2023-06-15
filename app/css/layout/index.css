@@ -1,7 +1,15 @@
 .Nav {
-  position: relative;
-  background-color: pink;
+  width: 100%;
+  position: fixed;
+}
+.Nav-global {
+  background-color: rgba(3, 1, 1, 0.8235294118);
   padding: 1rem;
+  border-bottom: solid 2px #c0a585;
+  border-left: solid 2px #c0a585;
+  border-right: solid 2px #c0a585;
+  border-bottom-right-radius: 1.4rem;
+  border-bottom-left-radius: 1.4rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -10,6 +18,7 @@
 }
 .Nav-icon {
   width: 5rem;
+  fill: white;
 }
 .Nav-icon--menu {
   width: 2rem;
@@ -30,12 +39,14 @@
   gap: 1rem;
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   width: 70vw;
-  background-color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(3, 1, 1, 0.8235294118);
   height: 100vh;
   border-top-left-radius: 1.4rem;
   border-bottom-left-radius: 1.4rem;
+  z-index: 1;
+  transition: ease-in-out 0.5s;
 }
 .Nav-ul {
   padding: 0 1rem 0rem 1rem;
@@ -85,8 +96,45 @@
   font-size: 0.8rem;
   color: white;
   border: solid 2px #c0a585;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.5rem 1.2rem 0.5rem 1.2rem;
   border-radius: 2rem;
+}
+.Nav-span--title {
+  font-size: 1.2rem;
+}
+.Nav-container--show {
+  right: 0;
+}
+
+.Section {
+  height: 80vh;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+.Section-video {
+  position: absolute;
+  width: 100%;
+}
+.Section-div {
+  width: 7rem;
+  position: relative;
+  background-image: url("../../../public/assets/botonicon.png");
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  top: 90%;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+.Section-btn {
+  color: black;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,13 +1,21 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
-
 .Nav {
-  position: relative;
-  background-color: pink;
-  padding: 1rem;
-  @include m.flex(row nowrap, space-between, center, 1rem);
+  width: 100%;
+  position: fixed;
+  &-global {
+    background-color: v.$colorNegroFondo;
+    padding: 1rem;
+    border-bottom: solid 2px v.$colorBordes;
+    border-left: solid 2px v.$colorBordes;
+    border-right: solid 2px v.$colorBordes;
+    border-bottom-right-radius: 1.4rem;
+    border-bottom-left-radius: 1.4rem;
+    @include m.flex(row nowrap, space-between, center, 1rem);
+  }
   &-icon {
     width: 5rem;
+    fill: white;
   }
   &-icon--menu {
     width: 2rem;
@@ -28,12 +36,14 @@
     gap: 1rem;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 70vw;
-    background-color: rgb(0 0 0 / 87%);
+    background-color: v.$colorNegroFondo;
     height: 100vh;
     border-top-left-radius: 1.4rem;
     border-bottom-left-radius: 1.4rem;
+    z-index: 1;
+    transition: ease-in-out 0.5s;
   }
   &-ul {
     padding: 0 1rem 0rem 1rem;
@@ -72,7 +82,13 @@
     font-size: 0.8rem;
     color: white;
     border: solid 2px #c0a585;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 2rem;
+  }
+  &-span--title {
+    font-size: 1.2rem;
+  }
+  &-container--show {
+    right: 0;
   }
 }

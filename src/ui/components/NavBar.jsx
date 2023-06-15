@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 export const NavBar = () => {
   const { nav, navMid } = useContext(AuthContext);
+  const [menu, setMenu] = useState(false);
+  const onHandleMenu = () => {
+    setMenu(!menu);
+  };
   return (
-    <>
-      <div className="Nav">
+    <div className="Nav">
+      <div className="Nav-global">
         <svg
           data-name="Capa 2"
           xmlns="http://www.w3.org/2000/svg"
@@ -32,18 +36,20 @@ export const NavBar = () => {
           fill="currentColor"
           className="Nav-icon--menu"
           viewBox="0 0 16 16"
+          onClick={() => onHandleMenu()}
         >
           <path
             fill-rule="evenodd"
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
           />
         </svg>
-        <nav className="Nav-container">
+        <nav className={`Nav-container ${menu ? "Nav-container--show" : ""}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             className="Nav-icon--close"
             viewBox="0 0 16 16"
+            onClick={() => onHandleMenu()}
           >
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
           </svg>
@@ -63,7 +69,7 @@ export const NavBar = () => {
                 <span className="Nav-span">{ele.info2}</span>
               </div>
               <div className="Nav-info">
-                <span className="Nav-span">{ele.title2}</span>
+                <span className="Nav-span Nav-span--title">{ele.title2}</span>
                 <span className="Nav-span">{ele.span2}</span>
                 <span className="Nav-span">{ele.info3}</span>
                 <span className="Nav-span">{ele.info4}</span>
@@ -80,6 +86,6 @@ export const NavBar = () => {
           ))}
         </nav>
       </div>
-    </>
+    </div>
   );
 };
