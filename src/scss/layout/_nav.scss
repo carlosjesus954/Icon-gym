@@ -3,6 +3,7 @@
 .Nav {
   width: 100%;
   position: fixed;
+  z-index: 2;
   &-global {
     background-color: v.$colorNegroFondo;
     padding: 1rem;
@@ -42,7 +43,7 @@
     height: 100vh;
     border-top-left-radius: 1.4rem;
     border-bottom-left-radius: 1.4rem;
-    z-index: 1;
+    z-index: 2;
     transition: ease-in-out 0.5s;
   }
   &-ul {

@@ -36,10 +36,37 @@ const navMid = [
     href: "https://www.google.com/maps/place/ICON+Gym,+Carrer+Dr.+Ventura+Alabau,+1,+46910+Alfafar,+Valencia/@39.4174752,-0.3817326,15z/data=!4m6!3m5!1s0xd604fcf611fd6c7:0x8a7e91ef5e7e8709!8m2!3d39.4174782!4d-0.3817471!16s%2Fg%2F11sy6xc615",
   },
 ];
-
+const membresias = [
+  {
+    id: 1,
+    title: "club select",
+    span: "oferta tarifa mensual",
+    span2: "por tiempo limitado",
+    span3: "1 mes de permanencia",
+    span4: "sin matricula",
+    precio: 50,
+    btn: "comprar ahora",
+    background: "../../public/assets/FONDO.jpg",
+  },
+  {
+    id: 2,
+    title: "pase de mes",
+    span: "acceso al club durante 30 dias",
+    precio: 60,
+    btn: "comprar ahora",
+    background: "../../public/assets/tarjeta-scaled.jpg",
+  },
+  {
+    id: 3,
+    title: "diario",
+    precio: 15,
+    btn: "comprar ahora",
+    background: "../../public/assets/tarjeta-scaled.jpg",
+  },
+];
 export const Provider = ({ children }) => {
   return (
-    <AuthContext.Provider value={{ nav, navMid }}>
+    <AuthContext.Provider value={{ nav, navMid, membresias }}>
       {children}
     </AuthContext.Provider>
   );
