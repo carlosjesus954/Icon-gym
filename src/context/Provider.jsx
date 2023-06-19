@@ -47,6 +47,7 @@ const membresias = [
     precio: 50,
     btn: "comprar ahora",
     background: "../../public/assets/FONDO.jpg",
+    big: true,
   },
   {
     id: 2,
@@ -55,6 +56,7 @@ const membresias = [
     precio: 60,
     btn: "comprar ahora",
     background: "../../public/assets/tarjeta-scaled.jpg",
+    big: false,
   },
   {
     id: 3,
@@ -62,6 +64,7 @@ const membresias = [
     precio: 15,
     btn: "comprar ahora",
     background: "../../public/assets/tarjeta-scaled.jpg",
+    big: false,
   },
 ];
 export const Provider = ({ children }) => {

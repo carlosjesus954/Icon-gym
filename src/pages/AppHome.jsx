@@ -24,24 +24,73 @@ export const AppHome = () => {
         </div>
       </section>
       <section className="Membresias">
-        <h1 className="Membresias-h1">nuestras membresías</h1>
+        <h2 className="Membresias-h2">nuestras membresías</h2>
         {membresias.map((ele) => (
           <div
-            className="Membresias-card"
+            className={`Membresias-card ${
+              ele.big ? "Membresias-card--big" : ""
+            }`}
             style={{ backgroundImage: `url(${ele.background})` }}
           >
-            <h3 className="Membresias-title">{ele.title}</h3>
+            <h3
+              className={`Membresias-title ${
+                ele.big ? "Membresias-title--big" : ""
+              }`}
+            >
+              {ele.title}
+            </h3>
             <div className="Membresias-container">
-              <span className="Membresias-span">{ele.span}</span>
-              <span className="Membresias-span">{ele.span2}</span>
-              <span className="Membresias-span">{ele.span3}</span>
-              <span className="Membresias-span">{ele.span4}</span>
+              <span
+                className={`Membresias-span ${
+                  ele.big ? "Membresias-span--big" : ""
+                }`}
+              >
+                {ele.span}
+              </span>
+              <span
+                className={`Membresias-span ${
+                  ele.big ? "Membresias-span--big" : ""
+                }`}
+              >
+                {ele.span2}
+              </span>
+              <span
+                className={`Membresias-span ${
+                  ele.big ? "Membresias-span--big" : ""
+                }`}
+              >
+                {ele.span3}
+              </span>
+              <span
+                className={`Membresias-span ${
+                  ele.big ? "Membresias-span--big" : ""
+                }`}
+              >
+                {ele.span4}
+              </span>
             </div>
             <div className="Membresias-precio">
-              <span className="Membresias-precio--icon">€</span>
-              <span className="Membresias-precio">{ele.precio}</span>
+              <span
+                className={`Membresias-precio--icon ${
+                  ele.big ? "Membresias-precio--iconBlack" : ""
+                }`}
+              >
+                €
+              </span>
+              <span
+                className={`Membresias-dinero ${
+                  ele.big ? "Membresias-dinero--big" : ""
+                }`}
+              >
+                {ele.precio}
+              </span>
             </div>
-            <a href="#" className="Membresias-btn">
+            <a
+              href="#"
+              className={`Membresias-btn ${
+                ele.big ? "Membresias-btn--big" : ""
+              }`}
+            >
               {ele.btn}
             </a>
           </div>
