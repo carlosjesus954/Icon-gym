@@ -1,7 +1,6 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 .Header {
-  // width: 100%;
   top: 0;
   position: fixed;
   width: 100%;
@@ -24,8 +23,12 @@
     align-items: center;
     padding: 1rem;
     width: 90%;
+    max-width: 60rem;
     margin-left: auto;
     margin-right: auto;
+    @include m.tablet {
+      justify-content: space-between;
+    }
   }
   &-container {
     display: flex;
@@ -42,6 +45,9 @@
     width: 2.5rem;
     fill: white;
     cursor: pointer;
+    @include m.tablet {
+      display: none;
+    }
   }
 }
 
@@ -56,7 +62,14 @@
   border-top-left-radius: 2.5rem;
   border-bottom-left-radius: 2.5rem;
   transition: ease-in-out 1s;
-
+  @include m.tablet {
+    border-radius: 0;
+    background-color: red;
+    position: relative;
+    width: 70%;
+    height: auto;
+    right: 0;
+  }
   &--show {
     right: 0;
   }
@@ -66,6 +79,9 @@
     position: absolute;
     right: 1rem;
     cursor: pointer;
+    @include m.tablet {
+      display: none;
+    }
   }
   &-ul {
     padding: 0;
@@ -76,17 +92,30 @@
     align-items: start;
     gap: 1rem;
     overflow: hidden;
+    @include m.tablet {
+      margin-top: 0;
+      flex-flow: row nowrap;
+      margin-bottom: 0;
+    }
   }
   &-li {
     color: white;
     border-bottom: solid 1px v.$colorBordes;
     list-style: none;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     padding-left: 1rem;
     padding-bottom: 1rem;
     cursor: pointer;
+    font-weight: bolder;
+    @include m.tablet {
+      width: auto;
+      border-bottom: none;
+      padding-left: 0;
+      padding-bottom: 0;
+      font-size: 0.9rem;
+    }
   }
   &-subcontainer {
     display: flex;
@@ -94,6 +123,9 @@
     justify-content: space-between;
     height: 55%;
     padding-left: 1rem;
+    @include m.tablet {
+      display: none;
+    }
   }
   &-info {
     display: flex;
@@ -106,10 +138,11 @@
   &-span--title {
     font-size: 1.2rem;
     color: white;
+    font-weight: bolder;
   }
   &-link {
     text-align: center;
-    border: 1px solid v.$colorBordes;
+    border: 2px solid v.$colorBordes;
     border-radius: 2rem;
     padding: 0.5rem 1rem;
     width: 6rem;

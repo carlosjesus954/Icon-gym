@@ -20,8 +20,14 @@
   align-items: center;
   padding: 1rem;
   width: 90%;
+  max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 770px) {
+  .Header-global {
+    justify-content: space-between;
+  }
 }
 .Header-container {
   display: flex;
@@ -39,6 +45,11 @@
   fill: white;
   cursor: pointer;
 }
+@media screen and (min-width: 770px) {
+  .Header-icon--menu {
+    display: none;
+  }
+}
 
 .Nav {
   background-color: rgba(3, 1, 1, 0.8235294118);
@@ -52,6 +63,16 @@
   border-bottom-left-radius: 2.5rem;
   transition: ease-in-out 1s;
 }
+@media screen and (min-width: 770px) {
+  .Nav {
+    border-radius: 0;
+    background-color: red;
+    position: relative;
+    width: 70%;
+    height: auto;
+    right: 0;
+  }
+}
 .Nav--show {
   right: 0;
 }
@@ -61,6 +82,11 @@
   position: absolute;
   right: 1rem;
   cursor: pointer;
+}
+@media screen and (min-width: 770px) {
+  .Nav-icon--close {
+    display: none;
+  }
 }
 .Nav-ul {
   padding: 0;
@@ -72,16 +98,33 @@
   gap: 1rem;
   overflow: hidden;
 }
+@media screen and (min-width: 770px) {
+  .Nav-ul {
+    margin-top: 0;
+    flex-flow: row nowrap;
+    margin-bottom: 0;
+  }
+}
 .Nav-li {
   color: white;
   border-bottom: solid 1px #c0a585;
   list-style: none;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   padding-left: 1rem;
   padding-bottom: 1rem;
   cursor: pointer;
+  font-weight: bolder;
+}
+@media screen and (min-width: 770px) {
+  .Nav-li {
+    width: auto;
+    border-bottom: none;
+    padding-left: 0;
+    padding-bottom: 0;
+    font-size: 0.9rem;
+  }
 }
 .Nav-subcontainer {
   display: flex;
@@ -89,6 +132,11 @@
   justify-content: space-between;
   height: 55%;
   padding-left: 1rem;
+}
+@media screen and (min-width: 770px) {
+  .Nav-subcontainer {
+    display: none;
+  }
 }
 .Nav-info {
   display: flex;
@@ -101,10 +149,11 @@
 .Nav-span--title {
   font-size: 1.2rem;
   color: white;
+  font-weight: bolder;
 }
 .Nav-link {
   text-align: center;
-  border: 1px solid #c0a585;
+  border: 2px solid #c0a585;
   border-radius: 2rem;
   padding: 0.5rem 1rem;
   width: 6rem;
