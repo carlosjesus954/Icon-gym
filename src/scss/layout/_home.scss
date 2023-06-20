@@ -50,6 +50,12 @@
     color: white;
     text-transform: uppercase;
   }
+  &-global {
+    @include m.flex(column nowrap, center, center, 1rem);
+    @include m.tablet {
+      @include m.flex(row wrap, center, center, 1rem);
+    }
+  }
   &-card {
     background-position: start;
     object-fit: cover;

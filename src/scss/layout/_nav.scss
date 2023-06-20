@@ -1,128 +1,119 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
-.Nav {
-  width: 100%;
+.Header {
+  // width: 100%;
+  top: 0;
   position: fixed;
+  width: 100%;
+  height: auto;
   z-index: 2;
 
   &-global {
     background-color: v.$colorNegroFondo;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    border-left: 2px solid v.$colorBordes;
+    border-bottom: 2px solid v.$colorBordes;
+    border-right: 2px solid v.$colorBordes;
+
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     padding: 1rem;
-    border-bottom: solid 2px v.$colorBordes;
-    border-left: solid 2px v.$colorBordes;
-    border-right: solid 2px v.$colorBordes;
-    border-bottom-right-radius: 1.4rem;
-    border-bottom-left-radius: 1.4rem;
-    max-width: 45rem;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    @include m.flex(row nowrap, space-between, center, 1rem);
-    @include m.tablet {
-      @include m.flex(row nowrap, space-between, center, 1rem);
-    }
+  }
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
   &-icon {
     width: 5rem;
     fill: white;
+    cursor: pointer;
   }
   &-icon--menu {
-    width: 2rem;
+    width: 2.5rem;
     fill: white;
     cursor: pointer;
-    @include m.tablet {
-      display: none;
-    }
+  }
+}
+
+.Nav {
+  background-color: v.$colorNegroFondo;
+  padding: 1rem;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 70vw;
+  height: 97vh;
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  transition: ease-in-out 1s;
+
+  &--show {
+    right: 0;
   }
   &-icon--close {
-    width: 2rem;
+    width: 3rem;
     fill: white;
-    cursor: pointer;
     position: absolute;
     right: 1rem;
-    top: 1rem;
-    @include m.tablet {
-      display: none;
-    }
+    cursor: pointer;
   }
-  &-container {
+  &-ul {
+    padding: 0;
+    margin-top: 4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    overflow: hidden;
+  }
+  &-li {
+    color: white;
+    border-bottom: solid 1px v.$colorBordes;
+    list-style: none;
+    width: 100%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+  }
+  &-subcontainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 55%;
+    padding-left: 1rem;
+  }
+  &-info {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70vw;
-    background-color: v.$colorNegroFondo;
-    height: 100vh;
-    border-top-left-radius: 1.4rem;
-    border-bottom-left-radius: 1.4rem;
-    z-index: 2;
-    transition: ease-in-out 0.5s;
-    @include m.tablet {
-      right: 0;
-      height: auto;
-      display: flex;
-      flex-flow: row nowrap;
-      background-color: transparent;
-      justify-content: center;
-      align-items: center;
-      top: -3rem;
-    }
-  }
-  &-ul {
-    padding: 0 1rem 0rem 1rem;
-
-    margin-top: 3rem;
-    width: 100%;
-    @include m.flex(column nowrap, start, start, 1rem);
-    @include m.tablet {
-      @include m.flex(row nowrap, start, start, 0.5rem);
-    }
-  }
-  &-li {
-    padding: 1rem 0.5rem;
-    font-size: 0.9rem;
-    color: #ffffffcc;
-    text-transform: uppercase;
-    border-bottom: solid 1px white;
-    width: 87%;
-    font-weight: bold;
-    cursor: pointer;
-    list-style: none;
-    @include m.tablet {
-      border-bottom: none;
-      width: auto;
-    }
-  }
-  &-subcontainer {
-    width: 100%;
-    height: 60%;
-    @include m.flex(column nowrap, space-between, start, 0);
-    @include m.tablet {
-      display: none;
-    }
-  }
-  &-info {
-    @include m.flex(column nowrap, start, start, 0.5rem);
-    padding-left: 1rem;
-    width: 100%;
-    margin-bottom: 2rem;
   }
   &-span {
     color: white;
-    font-size: 0.85rem;
-  }
-  &-link {
-    font-size: 0.8rem;
-    color: white;
-    border: solid 2px #c0a585;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
-    border-radius: 2rem;
   }
   &-span--title {
     font-size: 1.2rem;
+    color: white;
   }
-  &-container--show {
-    right: 0;
+  &-link {
+    text-align: center;
+    border: 1px solid v.$colorBordes;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    width: 6rem;
+    text-decoration: none;
+    color: white;
   }
 }
