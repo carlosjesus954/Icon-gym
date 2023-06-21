@@ -67,9 +67,22 @@ const membresias = [
     big: false,
   },
 ];
+const ubicacion = [
+  {
+    id: 1,
+    background: "../../public/assets/infoadicional.png",
+    title: "ubicación",
+    direccion: "Carrer Dr. Ventura Alabau, 1, 46910 Alfafar, Valencia",
+    title2: "horario",
+    span2:
+      "LUNES A SÁBADO DE 06:00 a 00:00 DOMINGOS Y FESTIVOS DE 09:00 a 20:00 TODOS LOS DÍAS DEL AÑO",
+    title3: "Instagram",
+    span3: "icongymoficial",
+  },
+];
 export const Provider = ({ children }) => {
   return (
-    <AuthContext.Provider value={{ nav, navMid, membresias }}>
+    <AuthContext.Provider value={{ nav, navMid, membresias, ubicacion }}>
       {children}
     </AuthContext.Provider>
   );

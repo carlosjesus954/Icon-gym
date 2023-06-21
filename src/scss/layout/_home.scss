@@ -1,18 +1,29 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 
+.wrapper {
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 .Section {
   position: relative;
   width: 100%;
   height: 80vh;
   top: 0;
   z-index: 1;
+  @include m.tablet {
+    height: 94vh;
+  }
   &-video {
     position: absolute;
     top: 0;
     width: 100%;
     height: 80vh;
     object-fit: cover;
+    @include m.tablet {
+      height: 94vh;
+    }
   }
   &-div {
     width: 7rem;
@@ -42,25 +53,36 @@
   background-position: center;
   background-size: cover;
   box-shadow: 0px -13px 39px 9px rgba(0, 0, 0, 0.92) inset;
-  padding: 1rem;
   @include m.flex(column nowrap, center, center, 1rem);
   text-align: center;
+  &-background--color {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+  }
   &-h2 {
     font-size: 2.4rem;
     color: white;
     text-transform: uppercase;
+    @include m.tablet {
+      font-size: 2.5rem;
+    }
   }
   &-global {
+    padding: 1rem;
+
     @include m.flex(column nowrap, center, center, 1rem);
     @include m.tablet {
       @include m.flex(row wrap, center, center, 1rem);
+      width: 100%;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
   }
   &-card {
     background-position: start;
     object-fit: cover;
     text-align: center;
-    max-width: 49rem;
+    max-width: 30rem;
 
     @include m.flex(column nowrap, center, center, 0.5rem);
     width: 100%;
@@ -76,6 +98,9 @@
     color: white;
     font-size: 1.8rem;
     text-transform: uppercase;
+    @include m.tablet {
+      font-size: 2rem;
+    }
   }
   &-title--big {
     color: black;
@@ -126,5 +151,72 @@
     display: flex;
     flex-flow: column nowrap;
     gap: 0.5rem;
+  }
+}
+.Ubicacion {
+  width: 100%;
+
+  background-repeat: initial;
+  background-position: center;
+  object-fit: cover;
+  box-shadow: 0px -13px 39px 9px rgba(0, 0, 0, 0.92) inset;
+  &-global {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+    @include m.tablet {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+  &-global--mod {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    @include m.tablet {
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+  }
+  &-cards {
+    max-width: 40rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  &-h2 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    @include m.tablet {
+      font-size: 2.5rem;
+    }
+  }
+  &-cards--subcontainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 20rem;
+  }
+  &-icon {
+    width: 2rem;
+    fill: white;
+    @include m.tablet {
+      width: 2rem;
+    }
+  }
+  &-span {
+    width: 80%;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    @include m.tablet {
+      font-size: 1.2rem;
+    }
   }
 }

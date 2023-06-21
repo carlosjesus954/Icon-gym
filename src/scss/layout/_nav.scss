@@ -35,12 +35,19 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    @include m.tablet {
+      width: auto;
+    }
   }
   &-icon {
     width: 5rem;
     fill: white;
     cursor: pointer;
+    @include m.tablet {
+      width: 4rem;
+    }
   }
+
   &-icon--menu {
     width: 2.5rem;
     fill: white;
@@ -63,10 +70,10 @@
   border-bottom-left-radius: 2.5rem;
   transition: ease-in-out 1s;
   @include m.tablet {
+    background-color: transparent;
     border-radius: 0;
-    background-color: red;
     position: relative;
-    width: 70%;
+    width: auto;
     height: auto;
     right: 0;
   }
@@ -114,7 +121,7 @@
       border-bottom: none;
       padding-left: 0;
       padding-bottom: 0;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
   }
   &-subcontainer {
