@@ -80,9 +80,33 @@ const ubicacion = [
     span3: "icongymoficial",
   },
 ];
+const empresas = [
+  {
+    id: 1,
+    img: "../../public/assets/PANATTALOG63.png",
+    alt: "panatia",
+  },
+  {
+    id: 2,
+    img: "../../public/assets/LogoHammer02.png",
+    alt: "hammer strength",
+  },
+  {
+    id: 3,
+    img: "../../public/assets/PRIME_Logo_1200x1200-png.webp",
+    alt: "prime",
+  },
+  {
+    id: 4,
+    img: "../../public/assets/300213222_389108753337570_6782189115034433375_n-150x150.png",
+    alt: "nautilus",
+  },
+];
 export const Provider = ({ children }) => {
   return (
-    <AuthContext.Provider value={{ nav, navMid, membresias, ubicacion }}>
+    <AuthContext.Provider
+      value={{ nav, navMid, membresias, ubicacion, empresas }}
+    >
       {children}
     </AuthContext.Provider>
   );

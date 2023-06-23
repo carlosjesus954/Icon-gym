@@ -1,0 +1,46 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.Footer {
+  width: 100%;
+  background-color: black;
+
+  &-global {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  &-ul {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @include m.tablet {
+      flex-flow: row nowrap;
+      gap: 4rem;
+    }
+  }
+  &-li {
+  }
+  &-link {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+  }
+  &-copy {
+    width: auto;
+    background-color: yellow;
+    padding: 1rem;
+    overflow-wrap: normal;
+    text-align: center;
+  }
+  &-span {
+    width: 100%;
+    color: black;
+    font-size: 0.9rem;
+  }
+}

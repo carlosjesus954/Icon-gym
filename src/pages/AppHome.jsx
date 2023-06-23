@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 export const AppHome = () => {
-  const { membresias, ubicacion } = useContext(AuthContext);
+  const { membresias, ubicacion, empresas } = useContext(AuthContext);
   return (
     <>
       <section className="Section">
@@ -174,6 +174,13 @@ export const AppHome = () => {
           </div>
         </section>
       ))}
+      <section className="Empresas ">
+        <div className="Empresas-global wrapper">
+          {empresas.map((ele) => (
+            <img src={ele.img} alt={ele.alt} className="Empresas-img" />
+          ))}
+        </div>
+      </section>
     </>
   );
 };
