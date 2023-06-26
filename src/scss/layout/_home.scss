@@ -145,6 +145,11 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: bold;
+    transition: ease-in-out 0.5s;
+    &:hover {
+      background-color: v.$colorBordesCards;
+      color: black;
+    }
   }
   &-btn--big {
     color: black;

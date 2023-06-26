@@ -1,9 +1,17 @@
 import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import { AuthContext } from "../../context/AuthContext";
 
 export const NavBar = () => {
   const { nav, navMid } = useContext(AuthContext);
   const [menu, setMenu] = useState(false);
+  const [menuActivo, setMenuActivo] = useState({
+    1: true,
+    2: false,
+    3: false,
+    4: false,
+  });
   const onHandleMenu = () => {
     setMenu(!menu);
   };
@@ -58,7 +66,15 @@ export const NavBar = () => {
           <ul className="Nav-ul">
             {nav.map((ele) => (
               <li className="Nav-li" key={ele.id}>
-                {ele.title}
+                {ele.a ? (
+                  <a href={ele.to} className="Nav-link--menu">
+                    {ele.title}
+                  </a>
+                ) : (
+                  <NavLink to={ele.to} className="Nav-link--menu">
+                    {ele.title}
+                  </NavLink>
+                )}
               </li>
             ))}
           </ul>

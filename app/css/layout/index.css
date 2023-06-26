@@ -47,7 +47,7 @@
 }
 @media screen and (min-width: 770px) {
   .Header-icon {
-    width: 4rem;
+    width: 6rem;
   }
 }
 .Header-icon--menu {
@@ -86,6 +86,10 @@
 .Nav--show {
   right: 0;
 }
+.Nav-link--menu {
+  color: white;
+  text-decoration: none;
+}
 .Nav-icon--close {
   width: 3rem;
   fill: white;
@@ -120,7 +124,7 @@
   border-bottom: solid 1px #c0a585;
   list-style: none;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -339,6 +343,11 @@
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: bold;
+  transition: ease-in-out 0.5s;
+}
+.Membresias-btn:hover {
+  background-color: #ffda0c;
+  color: black;
 }
 .Membresias-btn--big {
   color: black;
@@ -495,7 +504,7 @@
 .Footer-span {
   width: 100%;
   color: black;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=index.css.map */

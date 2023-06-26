@@ -44,7 +44,7 @@
     fill: white;
     cursor: pointer;
     @include m.tablet {
-      width: 4rem;
+      width: 6rem;
     }
   }
 
@@ -80,6 +80,10 @@
   &--show {
     right: 0;
   }
+  &-link--menu {
+    color: white;
+    text-decoration: none;
+  }
   &-icon--close {
     width: 3rem;
     fill: white;
@@ -110,7 +114,7 @@
     border-bottom: solid 1px v.$colorBordes;
     list-style: none;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     padding-left: 1rem;
     padding-bottom: 1rem;

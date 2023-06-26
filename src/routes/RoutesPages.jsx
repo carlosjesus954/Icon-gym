@@ -10,6 +10,8 @@ export const RoutesPages = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<AppHome />} />
+        {/* <Route path="/" element={<AppHome />} />
+        <Route path="/" element={<AppHome />} /> */}
       </Routes>
       <Footer />
     </>

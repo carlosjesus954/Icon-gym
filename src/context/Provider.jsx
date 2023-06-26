@@ -5,18 +5,26 @@ const nav = [
   {
     id: 1,
     title: "inicio",
+    a: false,
+    to: "/",
   },
   {
     id: 2,
     title: "tarifas",
+    a: true,
+    to: "https://deporweb.deporweb.net/altaonline/nueva.aspx?header=true&footer=true&nav=false&lang=es-ES&type=SUNPTnwxODE=",
   },
   {
     id: 3,
-    title: "fotos mayo",
+    title: "golden fest",
+    a: false,
+    to: "golden",
   },
   {
     id: 4,
     title: "contacto",
+    a: false,
+    to: "contact",
   },
 ];
 const navMid = [

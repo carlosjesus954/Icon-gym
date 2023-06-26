@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import "animate.css";
 
 export const AppHome = () => {
   const { membresias, ubicacion, empresas } = useContext(AuthContext);
@@ -31,7 +32,7 @@ export const AppHome = () => {
             <div className="Membresias-global">
               {membresias.map((ele) => (
                 <div
-                  className={`Membresias-card ${
+                  className={`Membresias-card animate__backInLeft ${
                     ele.big ? "Membresias-card--big" : ""
                   }`}
                   style={{ backgroundImage: `url(${ele.background})` }}
