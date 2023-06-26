@@ -507,4 +507,64 @@
   font-size: 0.8rem;
 }
 
+.wrapper {
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Golden {
+  background-color: black;
+}
+.Golden-h2 {
+  color: white;
+  width: 100%;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+.Golden-global {
+  padding: 6rem 1rem 1rem 1rem;
+  text-align: center;
+}
+.Golden-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media screen and (min-width: 770px) {
+  .Golden-div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1250px) {
+  .Golden-div {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.Golden-cards {
+  width: 100%;
+}
+.Golden-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.Golden-show {
+  background-color: rgba(0, 0, 0, 0.781);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+}
+.Golden-btns {
+  padding-top: 2rem;
+}
+.Golden-btn {
+  width: 2rem;
+  fill: white;
+}
+
 /*# sourceMappingURL=index.css.map */

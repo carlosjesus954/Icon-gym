@@ -32,7 +32,7 @@ export const AppHome = () => {
             <div className="Membresias-global">
               {membresias.map((ele) => (
                 <div
-                  className={`Membresias-card animate__backInLeft ${
+                  className={`Membresias-card animate__animated animate__backInLeft ${
                     ele.big ? "Membresias-card--big" : ""
                   }`}
                   style={{ backgroundImage: `url(${ele.background})` }}

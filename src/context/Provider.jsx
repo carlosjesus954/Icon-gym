@@ -110,10 +110,172 @@ const empresas = [
     alt: "nautilus",
   },
 ];
+const goldenFest = [
+  {
+    id: 1,
+    img: "../../public/assets/icon1img.jpeg",
+  },
+  {
+    id: 2,
+    img: "../../public/assets/icon2img.jpeg",
+  },
+  {
+    id: 3,
+    img: "../../public/assets/icon3img.jpeg",
+  },
+  {
+    id: 4,
+    img: "../../public/assets/icon4img.jpeg",
+  },
+  {
+    id: 5,
+    img: "../../public/assets/icon5img.jpeg",
+  },
+  {
+    id: 6,
+    img: "../../public/assets/icon6img.jpeg",
+  },
+  {
+    id: 7,
+    img: "../../public/assets/icon7img.jpeg",
+  },
+  {
+    id: 8,
+    img: "../../public/assets/icon8img.jpeg",
+  },
+  {
+    id: 9,
+    img: "../../public/assets/icon9img.jpeg",
+  },
+  {
+    id: 10,
+    img: "../../public/assets/icon10img.jpeg",
+  },
+  {
+    id: 11,
+    img: "../../public/assets/icon11img.jpeg",
+  },
+  {
+    id: 12,
+    img: "../../public/assets/icon12img.jpeg",
+  },
+  {
+    id: 13,
+    img: "../../public/assets/icon13img.jpeg",
+  },
+  {
+    id: 14,
+    img: "../../public/assets/icon14img.jpeg",
+  },
+  {
+    id: 15,
+    img: "../../public/assets/icon15img.jpeg",
+  },
+  {
+    id: 16,
+    img: "../../public/assets/icon16img.jpeg",
+  },
+  {
+    id: 17,
+    img: "../../public/assets/icon17img.jpeg",
+  },
+  {
+    id: 18,
+    img: "../../public/assets/icon18img.jpeg",
+  },
+  {
+    id: 19,
+    img: "../../public/assets/icon19img.jpeg",
+  },
+  {
+    id: 20,
+    img: "../../public/assets/icon20img.jpeg",
+  },
+  {
+    id: 21,
+    img: "../../public/assets/icon21img.jpeg",
+  },
+  {
+    id: 22,
+    img: "../../public/assets/icon22img.jpeg",
+  },
+  {
+    id: 23,
+    img: "../../public/assets/icon23img.jpeg",
+  },
+  {
+    id: 24,
+    img: "../../public/assets/icon24img.jpeg",
+  },
+  {
+    id: 25,
+    img: "../../public/assets/icon25img.jpeg",
+  },
+  {
+    id: 26,
+    img: "../../public/assets/icon26img.jpeg",
+  },
+  {
+    id: 27,
+    img: "../../public/assets/icon27img.jpeg",
+  },
+  {
+    id: 28,
+    img: "../../public/assets/icon28img.jpeg",
+  },
+  {
+    id: 29,
+    img: "../../public/assets/icon29img.jpeg",
+  },
+  {
+    id: 30,
+    img: "../../public/assets/icon30img.jpeg",
+  },
+  {
+    id: 31,
+    img: "../../public/assets/icon31img.jpeg",
+  },
+  {
+    id: 32,
+    img: "../../public/assets/icon32img.jpeg",
+  },
+  {
+    id: 33,
+    img: "../../public/assets/icon33img.jpeg",
+  },
+  {
+    id: 34,
+    img: "../../public/assets/icon34img.jpeg",
+  },
+  {
+    id: 35,
+    img: "../../public/assets/icon35img.jpeg",
+  },
+  {
+    id: 36,
+    img: "../../public/assets/icon36img.jpeg",
+  },
+  {
+    id: 37,
+    img: "../../public/assets/icon38img.jpeg",
+  },
+  {
+    id: 38,
+    img: "../../public/assets/icon39img.jpeg",
+  },
+  {
+    id: 39,
+    img: "../../public/assets/icon40img.jpeg",
+  },
+  {
+    id: 40,
+    img: "../../public/assets/icon41img.jpeg",
+  },
+];
 export const Provider = ({ children }) => {
   return (
     <AuthContext.Provider
-      value={{ nav, navMid, membresias, ubicacion, empresas }}
+      value={{ nav, navMid, membresias, ubicacion, empresas, goldenFest }}
     >
       {children}
     </AuthContext.Provider>
