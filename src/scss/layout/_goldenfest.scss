@@ -39,19 +39,69 @@
     height: 100%;
   }
   &-show {
-    background-color: rgba(0, 0, 0, 0.781);
+    background-color: rgba(0, 0, 0, 0.884);
     position: fixed;
     z-index: 3;
     width: 100%;
     height: 100vh;
     top: 0;
-    left: -100%;
+    right: -100%;
+    transition: 1s all ease-in-out;
   }
   &-btns {
     padding-top: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
   }
   &-btn {
     width: 2rem;
     fill: white;
+    cursor: pointer;
+  }
+  &-box {
+    margin-top: 8rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    @include m.desktop {
+      margin-top: 5rem;
+    }
+  }
+  &-img--selected {
+    object-fit: cover;
+    width: 21rem;
+    height: auto;
+    @include m.tablet {
+      width: 28rem;
+      height: auto;
+    }
+    @include m.desktop {
+      width: 30rem;
+      height: auto;
+    }
+  }
+  &-show--open {
+    right: 0;
+  }
+  &-btn--hidden {
+    display: none;
+  }
+  &-count {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-counter {
+    font-size: 1.5rem;
+
+    color: white;
+  }
+  &-img--modified {
+    height: 33.0706rem;
   }
 }
