@@ -1,0 +1,123 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+.wrapper {
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Contact {
+  background-image: url("../../../public/assets/backgroundcontact.jpg");
+  background-size: cover;
+  width: 100%;
+  &-global {
+    background-color: rgba(0, 0, 0, 0.171);
+  }
+  &-article {
+    padding: 8rem 1rem 1rem 1rem;
+    @include m.tablet {
+      padding: 8rem 3rem 1rem 3rem;
+    }
+  }
+  &-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 100%;
+    @include m.tablet {
+      align-items: start;
+      justify-content: start;
+    }
+  }
+  &-h2 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: v.$colorBordesCards;
+    margin: 0;
+    @include m.tablet {
+      font-size: 2rem;
+    }
+  }
+  &-h3 {
+    font-size: 2.4rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    @include m.tablet {
+      font-size: 2.6rem;
+    }
+  }
+  &-span {
+    font-size: 1.1rem;
+    text-align: center;
+    color: v.$colorLetra;
+  }
+  &-form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    // overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  &-input {
+    width: 90%;
+    background-color: transparent;
+    border-style: none;
+    border-bottom: 1px solid white;
+    padding: 0rem 0rem 1rem 1.5rem;
+    color: v.$colorLetra;
+    font-size: 1.1rem;
+    outline: none;
+    @include m.tablet {
+      width: 100%;
+    }
+  }
+  &-button {
+    background-color: transparent;
+    border: solid 2px v.$colorBordesCards;
+    padding: 1rem 2rem 1rem 2rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+  &-div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  &-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    @include m.tablet {
+      flex-flow: row nowrap;
+      justify-content: start;
+    }
+  }
+  &-icon {
+    width: 2rem;
+    fill: v.$colorBordesCards;
+  }
+  &-a {
+    color: white;
+    text-decoration: none;
+  }
+  &-div--icons {
+    @include m.tablet {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

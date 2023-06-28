@@ -312,9 +312,27 @@ const goldenFest = [
     paisage: true,
   },
 ];
+const contact = [
+  {
+    id: 1,
+    placeHolder: "Nombre",
+    input: "text",
+  },
+  {
+    id: 2,
+    placeHolder: "Teléfono",
+    input: "text",
+  },
+  {
+    id: 3,
+    placeHolder: "email",
+    input: "email",
+  },
+];
 export const Provider = ({ children }) => {
   const [goldenShow, setGoldenShow] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [menu, setMenu] = useState(false);
 
   return (
     <AuthContext.Provider
@@ -329,6 +347,9 @@ export const Provider = ({ children }) => {
         setGoldenShow,
         selectedId,
         setSelectedId,
+        contact,
+        menu,
+        setMenu,
       }}
     >
       {children}

@@ -4,8 +4,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 export const NavBar = () => {
-  const { nav, navMid } = useContext(AuthContext);
-  const [menu, setMenu] = useState(false);
+  const { nav, navMid, menu, setMenu } = useContext(AuthContext);
   const [menuActivo, setMenuActivo] = useState({
     1: true,
     2: false,
