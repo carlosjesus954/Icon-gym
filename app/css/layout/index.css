@@ -716,6 +716,15 @@
     width: 100%;
   }
 }
+.Contact-input--textarea {
+  resize: vertical;
+}
+.Contact-error {
+  color: rgb(184, 0, 0);
+  width: 100%;
+  text-align: left;
+  margin: 0;
+}
 .Contact-button {
   background-color: transparent;
   border: solid 2px #ffda0c;
@@ -725,6 +734,13 @@
   font-weight: bold;
   border-radius: 2rem;
   margin-bottom: 2rem;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.Contact-button:hover {
+  font-size: 1.2rem;
+  background-color: #ffda0c;
+  color: black;
 }
 .Contact-div {
   display: flex;

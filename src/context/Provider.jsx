@@ -317,16 +317,22 @@ const contact = [
     id: 1,
     placeHolder: "Nombre",
     input: "text",
+    patern: null,
+    name: "nombre",
   },
   {
     id: 2,
-    placeHolder: "Teléfono",
+    placeHolder: "Teléffono",
     input: "text",
+    patern: "[0-9()#&+*-=.]+",
+    name: "telefono",
   },
   {
     id: 3,
     placeHolder: "email",
     input: "email",
+    patern: null,
+    name: "email",
   },
 ];
 export const Provider = ({ children }) => {

@@ -1,8 +1,52 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useForm } from "../hook/useForm";
 
 export const ContactPage = () => {
   const { contact } = useContext(AuthContext);
+  const initialForm = {
+    nombre: "",
+    telefono: "",
+    email: "",
+    mensaje: "",
+  };
+  const validateForm = (form) => {
+    let errors = {};
+    const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    const regexTelefonoMovil = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
+
+    if (!form.nombre.trim()) {
+      errors.nombre = "Es requirido este campo";
+    } else if (!regexName.test(form.nombre.trim())) {
+      errors.nombre = "Este nombre no es valido";
+    }
+    if (!form.telefono.trim()) {
+      errors.telefono = "Es requirido este campo";
+    } else if (!regexTelefonoMovil.test(form.telefono.trim())) {
+      errors.telefono = "Este teléfono no es valido";
+    }
+    if (!form.email.trim()) {
+      errors.email = "Es requirido este campo";
+    } else if (!regexEmail.test(form.email.trim())) {
+      errors.email = "Este correo no es valido";
+    }
+    if (!form.mensaje.trim()) {
+      errors.mensaje = "Es requirido este campo";
+    }
+
+    return errors;
+  };
+  const {
+    form,
+    errors,
+    loading,
+    response,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useForm(initialForm, validateForm);
+
   return (
     <section className="Contact">
       <div className="Contact-global ">
@@ -15,22 +59,38 @@ export const ContactPage = () => {
               posible.
             </span>
           </div>
-          <form action="#" className="Contact-form">
+          <form action="#" className="Contact-form" onSubmit={handleSubmit}>
             {contact.map((ele) => (
-              <input
-                type={ele.input}
-                className="Contact-input"
-                placeholder={ele.placeHolder}
-              />
+              <>
+                <input
+                  key={ele.id}
+                  type={ele.input}
+                  className="Contact-input"
+                  name={ele.name}
+                  pattern={ele.patern}
+                  placeholder={ele.placeHolder}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={form[ele.name]}
+                  required
+                />
+                {errors[ele.name] && (
+                  <p className="Contact-error">{errors[ele.name]}</p>
+                )}
+              </>
             ))}
             <textarea
-              name=""
-              id=""
+              name="mensaje"
               cols="10"
               rows="2"
               placeholder="Mensaje"
-              className="Contact-input"
+              className="Contact-input Contact-input--textarea"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.mensaje}
+              required
             ></textarea>
+            {/* {errors[name] && <p className="Contact-error">{errors[name]}</p>} */}
             <button type="submit" className="Contact-button">
               Enviar
             </button>
@@ -48,7 +108,7 @@ export const ContactPage = () => {
               <div className="Contact-card">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
+                  fillRule="currentColor"
                   className="Contact-icon"
                   viewBox="0 0 16 16"
                 >
@@ -64,12 +124,12 @@ export const ContactPage = () => {
               <div className="Contact-card">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
+                  fillRule="currentColor"
                   className="Contact-icon"
                   viewBox="0 0 16 16"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
                   />
                 </svg>
@@ -80,7 +140,7 @@ export const ContactPage = () => {
               <div className="Contact-card">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
+                  fillRule="currentColor"
                   className="Contact-icon"
                   viewBox="0 0 16 16"
                 >
@@ -93,7 +153,7 @@ export const ContactPage = () => {
               <div className="Contact-card">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
+                  fillRule="currentColor"
                   className="Contact-icon"
                   viewBox="0 0 16 16"
                 >
