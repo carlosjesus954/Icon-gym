@@ -14,6 +14,18 @@ export const NavBar = () => {
   const onHandleMenu = () => {
     setMenu(!menu);
   };
+
+  const onHandleMenuactive = (id) => {
+    setMenuActivo((prevMenuActivo) => {
+      const newMenuActivo = { ...prevMenuActivo };
+      Object.keys(newMenuActivo).forEach((key) => {
+        newMenuActivo[key] = false;
+      });
+      newMenuActivo[id] = true;
+      return newMenuActivo;
+    });
+  };
+
   return (
     <header className="Header">
       <div className="Header-global">
@@ -64,13 +76,23 @@ export const NavBar = () => {
           </svg>
           <ul className="Nav-ul">
             {nav.map((ele) => (
-              <li className="Nav-li" key={ele.id}>
+              <li
+                className="Nav-li"
+                key={ele.id}
+                onClick={() => onHandleMenu()}
+              >
                 {ele.a ? (
-                  <a href={ele.to} className="Nav-link--menu">
+                  <a href={ele.to} className="Nav-link--menu ">
                     {ele.title}
                   </a>
                 ) : (
-                  <NavLink to={ele.to} className="Nav-link--menu">
+                  <NavLink
+                    to={ele.to}
+                    onClick={() => onHandleMenuactive(ele.id)}
+                    className={`Nav-link--menu ${
+                      menuActivo[ele.id] ? "Nav-link--active" : ""
+                    }`}
+                  >
                     {ele.title}
                   </NavLink>
                 )}

@@ -59,9 +59,16 @@
     display: flex;
     flex-flow: column nowrap;
     gap: 2rem;
-    // overflow: hidden;
     justify-content: center;
     align-items: center;
+  }
+  &-formcontainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   &-input {
     width: 90%;
@@ -82,7 +89,7 @@
   &-error {
     color: rgb(184, 0, 0);
     width: 100%;
-    text-align: left;
+
     margin: 0;
   }
   &-button {
@@ -135,5 +142,14 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+  &-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  &-icon--error {
+    width: 2rem;
+    fill: rgb(184, 0, 0);
   }
 }

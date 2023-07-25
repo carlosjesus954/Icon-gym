@@ -17,8 +17,19 @@ export const useForm = (initialForm, validateForm) => {
     handleChange(e);
     setErrors(validateForm(form));
   };
-  const handleSubmit = (e) => {};
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrors(validateForm(form));
+    if (Object.keys(errors).length === 0) {
+      alert("Enviando formulario (prueba)");
+      resetForm();
+    } else {
+      return;
+    }
+  };
+  const resetForm = () => {
+    setForm(initialForm);
+  };
   return {
     form,
     errors,

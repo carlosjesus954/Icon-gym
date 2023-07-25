@@ -27,11 +27,14 @@ export const AppHome = () => {
       <section className="Membresias">
         <div className="Membresias-background--color">
           <div className="wrapper">
-            <h2 className="Membresias-h2">nuestras membresías</h2>
+            <h2 className="Membresias-h2 animate__animated animate__backInLeft">
+              nuestras membresías
+            </h2>
 
             <div className="Membresias-global">
               {membresias.map((ele) => (
                 <div
+                  key={ele.id}
                   className={`Membresias-card animate__animated animate__backInLeft ${
                     ele.big ? "Membresias-card--big" : ""
                   }`}
@@ -111,13 +114,10 @@ export const AppHome = () => {
           key={ele.id}
           style={{ backgroundImage: `url(${ele.background})` }}
         >
-          <div className="Ubicacion-global">
+          <div className="Ubicacion-global animate__animated animate__backInLeft">
             <div className="Ubicacion-global--mod wrapper">
               <div className="Ubicacion-cards">
-                <h2 h2 className="Ubicacion-h2">
-                  {" "}
-                  {ele.title}{" "}
-                </h2>
+                <h2 className="Ubicacion-h2"> {ele.title} </h2>
                 <div className="Ubicacion-cards--subcontainer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -131,10 +131,7 @@ export const AppHome = () => {
                 </div>
               </div>
               <div className="Ubicacion-cards">
-                <h2 h2 className="Ubicacion-h2">
-                  {" "}
-                  {ele.title2}{" "}
-                </h2>
+                <h2 className="Ubicacion-h2"> {ele.title2} </h2>
                 <div className="Ubicacion-cards--subcontainer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -148,10 +145,7 @@ export const AppHome = () => {
                 </div>
               </div>
               <div className="Ubicacion-cards">
-                <h2 h2 className="Ubicacion-h2">
-                  {" "}
-                  {ele.title3}{" "}
-                </h2>
+                <h2 className="Ubicacion-h2"> {ele.title3} </h2>
                 <div className="Ubicacion-cards--subcontainer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +172,12 @@ export const AppHome = () => {
       <section className="Empresas ">
         <div className="Empresas-global wrapper">
           {empresas.map((ele) => (
-            <img src={ele.img} alt={ele.alt} className="Empresas-img" />
+            <img
+              key={ele.id}
+              src={ele.img}
+              alt={ele.alt}
+              className="Empresas-img"
+            />
           ))}
         </div>
       </section>

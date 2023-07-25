@@ -14,11 +14,13 @@ export const GoldenFest = () => {
   return (
     <section className="Golden">
       <div className="Golden-global wrapper">
-        <h2 className="Golden-h2">golden fest</h2>
+        <h2 className="Golden-h2 animate__animated animate__backInLeft">
+          golden fest
+        </h2>
         <div className="Golden-div">
           {goldenFest.map((ele) => (
             <div
-              className="Golden-cards animate__animated animate__fadeInUp"
+              className="Golden-cards animate__animated animate__zoomIn"
               key={ele.id}
             >
               <img

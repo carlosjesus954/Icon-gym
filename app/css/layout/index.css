@@ -140,6 +140,9 @@
     font-size: 0.8rem;
   }
 }
+.Nav-link--active {
+  color: yellow;
+}
 .Nav-subcontainer {
   display: flex;
   flex-flow: column nowrap;
@@ -701,6 +704,14 @@
   justify-content: center;
   align-items: center;
 }
+.Contact-formcontainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .Contact-input {
   width: 90%;
   background-color: transparent;
@@ -722,7 +733,6 @@
 .Contact-error {
   color: rgb(184, 0, 0);
   width: 100%;
-  text-align: left;
   margin: 0;
 }
 .Contact-button {
@@ -777,6 +787,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.Contact-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.Contact-icon--error {
+  width: 2rem;
+  fill: rgb(184, 0, 0);
 }
 
 /*# sourceMappingURL=index.css.map */
